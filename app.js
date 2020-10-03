@@ -13,7 +13,7 @@ app.use(express.static(__dirname + '/public'));
 
 const listRouter = require('./routes/list');
 app.use('/', listRouter);
-
+app.use('/list', listRouter);
 
 app.listen(port, (req, res)=>{
     console.log('express server connected!');
