@@ -7,12 +7,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
+const methodOverride = require('method-override');
+const option = require('./model/db');
 
 app.set('views', './views');
 app.set('view engine', 'ejs');
 app.locals.pretty = true;
 
-const option =require('./model/db');
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
@@ -21,16 +22,19 @@ app.use(session({
 }));
 
 app.use(express.static(__dirname + '/public'));
+app.use(methodOverride('_method'));
 
 const listRouter = require('./routes/list');
-const writetRouter = require('./routes/write');
+const writeRouter = require('./routes/write');
+const editRouter = require('./routes/edit');
 
 const signupRouter = require('./routes/signup');
 const loginRouter = require('./routes/login');
 const logoutRouter = require('./routes/logout');
 
 app.use('/', listRouter);
-app.use('/', writetRouter);
+app.use('/', writeRouter);
+app.use('/', editRouter);
 
 app.use('/', signupRouter);
 app.use('/', loginRouter);

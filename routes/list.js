@@ -7,7 +7,7 @@ const conn = mysql.createConnection(dbconfig);
 
 const sql = {
     list: 'SELECT * FROM border',
-    select: 'SELECT title, content FROM border WHERE id = ?'
+    select: 'SELECT * FROM border WHERE id = ?'
 };
 
 router.get('/', (req, res) => {

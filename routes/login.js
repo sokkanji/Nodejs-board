@@ -28,7 +28,7 @@ router.post('/login', (req, res)=>{
             console.log(err); 
             return;
         } else {
-            if(rows[0].userpw == _userpw && rows[0].userid == _userid){
+            if(rows[0].userpw === _userpw && rows[0].userid === _userid){
                 req.session.displayName = rows[0].displayName;
                 req.session.save( ()=>{
                     res.redirect('/');

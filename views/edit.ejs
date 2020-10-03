@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<%- include ('./layout/header') %>
+
+<body>
+    <div class='forms'>
+        <h1><%= title %></h1>
+
+        <form method='post' action='/edit/<%= docs.id %>?_method=PUT'>
+            <label for='writer'>작성자</label> 
+            <input type='text' name='writer' class='form-control' autocomplete='off' value='<%= docs.writer %>'>
+      
+            <label for='title'>제목</label>
+            <input type='text' name='title' id='title' class='form-control' autocomplete='off' placeholder='제목' value='<%= docs.title %>'>
+      
+            <div>내용</div>
+            <textarea name='content' id='content' class='form-control' rows='10' cols='80'><%= docs.content %></textarea>
+            <br>
+
+            <button type='submit' class='btn btn-dark'>수정하기</button>
+        </form>
+    </div>
+</body>
+
+</html>
