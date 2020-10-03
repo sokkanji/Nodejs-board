@@ -16,11 +16,11 @@ const sql = {
 };
 
 router.get('/write', (req, res) => {
-    res.render('write', {title: 'Write'});
-});
+    res.render('write', {title: 'Write', displayName: req.session.displayName});
+})
 
 router.post('/write', (req, res) => {
-    const _writer = req.body.writer;
+    const _writer = req.session.displayName;
     const _title = req.body.title;
     const _content = req.body.content;
 
@@ -29,10 +29,9 @@ router.post('/write', (req, res) => {
             console.log(err);
             return;
         } else {
-            console.log('Inserted');
             res.redirect('/');
         }
     });
-});
+})
 
 module.exports = router;

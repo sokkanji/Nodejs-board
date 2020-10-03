@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<%- include ('./layout/header') %>
+  
+<body>
+  <div class='forms'>
+    <h1><%= title %></h1>
+
+    <form method='post' action='/signup'>
+      <label for='userid'>아이디</label>
+      <input type='text' name='userid' id='userid' class='form-control' autocomplete='off' placeholder='아이디'>
+
+      <label for='userpw'>비밀번호</label>
+      <input type='password' name='userpw' id='userpw' class='form-control' autocomplete='off' placeholder='비밀번호'>
+
+      <label for='displayName'>이름</label>
+      <input type='text' name='displayName' id='displayName' class='form-control' autocomplete='off' placeholder='이름'>
+
+      <label for='email'>이메일</label>
+      <input type='email' name='email' id='email' class='form-control' autocomplete='off' placeholder='이메일'>
+
+      <button type='submit' class='btn btn-dark'>가입하기</button>
+    </form>
+
+  </div>
+</body>
+
+</html>

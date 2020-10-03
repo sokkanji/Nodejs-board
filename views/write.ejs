@@ -6,10 +6,9 @@
 <body> 
   <div class='forms'>
     <h1><%= title %></h1>
-
     <form method='post' action='/write'>
-      <label for='writer'>작성자</label>
-      <input type='text' name='writer' id='writer' class='form-control' autocomplete='off' placeholder='작성자'>
+      <label for='writer'>작성자</label> 
+      <input type='text' name='writer' class='form-control' autocomplete='off' value='<%= displayName %>'>
 
       <label for='title'>제목</label>
       <input type='text' name='title' id='title' class='form-control' autocomplete='off' placeholder='제목'>
