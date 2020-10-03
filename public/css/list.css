@@ -1,0 +1,30 @@
+#list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+#list a {
+    color: white !important;
+}
+
+#list table tbody tr td a {
+    color: #000 !important;
+}
+
+#list table {
+    text-align: center;
+}
+
+#list .btn-sm {
+    float: right;
+    margin-bottom: 10px;
+}
+
+#list form {
+    text-align: center;
+}
+
+#list .login-info {
+    overflow: hidden;
+}

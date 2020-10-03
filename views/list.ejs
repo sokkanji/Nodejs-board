@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    
+<%- include ("./layout/header") %>
+
+<body>
+    <div id="list">
+        <h1>Border List</h1>
+
+        <div class="write-btn">
+            <button class="btn btn-secondary btn-sm" onclick="location.href='/write'">Write</button>
+        </div>
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">작성자</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">등록일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i = 0; i < docs.length; i++){ %>
+                <tr scope="row">
+                    <td><%= docs[i].id %></td>
+                    <td><%= docs[i].writer %></td>
+                    <td><a href="/<%=docs[i].id%>"><%= docs[i].title %></a></td>
+                    <td><%= docs[i].regdate %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <form method="GET" action="#">
+            <select>
+                <option>제목</option>
+                <option>작성자</option>
+            </select>
+            <input type="text">
+            <button class="btn btn-dark">Search</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
