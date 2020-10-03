@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 
-<%- include ("./layout/header") %>
+<%- include ('./layout/header') %>
 
 <body>
-    <div id="read">
+    <div id='read'>
         <h1>       
             <%= docs.title %>
         </h1>
-        <div class="content">
+        <div class='content'>
             <%= docs.content %>
         </div>
 
-        <button class="btn btn-dark" onclick="location.href='/'">목록</button>
-        <div class="edit-btns">
-            <button class="btn btn-dark" onclick="location.href='/edit'">수정</button>
-            <button class="btn btn-dark" onclick="location.href='/delete'">삭제</button>
+        <button class='btn btn-dark' onclick='location.href="/"'>목록</button>
+        <div class='edit-btns'>
+            <button class='btn btn-dark' onclick='location.href="/edit"'>수정</button>
+            <button class='btn btn-dark' onclick='location.href="/delete"'>삭제</button>
         </div>
     </div>
 </body>

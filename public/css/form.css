@@ -1,0 +1,17 @@
+.forms {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 70px;
+}
+
+.forms form {
+    margin-top: 15px;
+}
+
+.forms form input {
+    margin-bottom: 15px;
+}
+
+.forms .signup-div {
+    margin-top: 15px;
+}

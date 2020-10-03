@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
             console.log(err);
             return;
         } else {
-            res.render('list', { docs: rows});
+            res.render('list', {docs: rows});
         }
     })
 })
