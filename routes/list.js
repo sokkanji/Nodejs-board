@@ -16,12 +16,12 @@ router.get('/', (req, res) => {
             console.log(err);
             return;
         } else {
-            res.render('list', { docs: rows, title: 'Border List'});
+            res.render('list', { docs: rows});
         }
     })
 })
 
-router.get('/:id', (req, res) => {
+router.get('/:id(\\d+)', (req, res) => {
     const _id = req.params.id;
 
     conn.query(sql.select, [_id], (err, rows) => {

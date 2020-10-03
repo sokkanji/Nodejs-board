@@ -20,8 +20,8 @@
                     <th scope="col">등록일</th>
                 </tr>
             </thead>
-            <tbody>
-                <% for (let i = 0; i < docs.length; i++){ %>
+            <tbody>                
+                <% for (let i = 0; i < docs.length; i++){ %>                    
                 <tr scope="row">
                     <td><%= docs[i].id %></td>
                     <td><%= docs[i].writer %></td>
@@ -37,7 +37,7 @@
                 <option>제목</option>
                 <option>작성자</option>
             </select>
-            <input type="text"  class="form-control form-box">
+            <input type="text" class="form-control form-box">
             <button class="btn btn-dark">Search</button>
         </form>
 
