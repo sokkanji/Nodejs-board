@@ -11,7 +11,7 @@ const mysql = require('mysql');
 const dbconfig = require('../model/db');
 const conn = mysql.createConnection(dbconfig);
 
-const sql = 'INSERT INTO border(writer, title, content, regdate) VALUES(?, ?, ?, ?);';
+const sql = 'INSERT INTO board(writer, title, content, regdate) VALUES(?, ?, ?, ?);';
 
 router.get('/write', (req, res) => {
     if(req.session.displayName){

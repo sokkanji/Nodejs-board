@@ -5,7 +5,7 @@ const mysql = require('mysql');
 const dbconfig = require('../model/db');
 const conn = mysql.createConnection(dbconfig);
 
-const sql = 'DELETE FROM border WHERE id = ?';
+const sql = 'DELETE FROM board WHERE id = ?';
 
 router.delete('/delete/:id', (req, res) => {
     const _id = req.params.id;

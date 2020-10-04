@@ -28,6 +28,7 @@ const listRouter = require('./routes/list');
 const writeRouter = require('./routes/write');
 const editRouter = require('./routes/edit');
 const deleteRouter = require('./routes/delete');
+const searchRouter = require('./routes/search');
 
 const signupRouter = require('./routes/signup');
 const loginRouter = require('./routes/login');
@@ -37,6 +38,7 @@ app.use('/', listRouter);
 app.use('/', writeRouter);
 app.use('/', editRouter);
 app.use('/', deleteRouter);
+app.use('/', searchRouter);
 
 app.use('/', signupRouter);
 app.use('/', loginRouter);
