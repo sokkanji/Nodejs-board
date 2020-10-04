@@ -14,8 +14,10 @@
 
         <button class='btn btn-dark' onclick='location.href="/"'>목록</button>
         <div class='edit-btns'>
-            <button class='btn btn-dark' onclick='location.href="/edit/<%=docs.id%>"'>수정</button>
-            <button class='btn btn-dark' onclick='location.href="/delete/<%= docs.id %>"'>삭제</button>
+            <button class='btn btn-dark' onclick='location.href="/edit/<%= docs.id %>"'>수정</button>
+            <form method='post' action='/delete/<%= docs.id %>?_method=delete'>
+                <button class='btn btn-dark'>삭제</button>
+            </form>
         </div>
     </div>
 </body>

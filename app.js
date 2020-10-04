@@ -27,6 +27,7 @@ app.use(methodOverride('_method'));
 const listRouter = require('./routes/list');
 const writeRouter = require('./routes/write');
 const editRouter = require('./routes/edit');
+const deleteRouter = require('./routes/delete');
 
 const signupRouter = require('./routes/signup');
 const loginRouter = require('./routes/login');
@@ -35,6 +36,7 @@ const logoutRouter = require('./routes/logout');
 app.use('/', listRouter);
 app.use('/', writeRouter);
 app.use('/', editRouter);
+app.use('/', deleteRouter);
 
 app.use('/', signupRouter);
 app.use('/', loginRouter);

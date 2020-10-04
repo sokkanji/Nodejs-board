@@ -8,7 +8,6 @@ router.get('/logout', (req, res)=>{
                 </script>`;
     delete req.session.displayName;
     res.send(str);
-    console.log('Logout');
 })
 
 module.exports=router;

@@ -11,9 +11,7 @@ const mysql = require('mysql');
 const dbconfig = require('../model/db');
 const conn = mysql.createConnection(dbconfig);
 
-const sql = {
-    insert: 'INSERT INTO border(writer, title, content, regdate) VALUES(?, ?, ?, ?);'
-};
+const sql = 'INSERT INTO border(writer, title, content, regdate) VALUES(?, ?, ?, ?);';
 
 router.get('/write', (req, res) => {
     res.render('write', {title: 'Write', displayName: req.session.displayName});
@@ -24,7 +22,7 @@ router.post('/write', (req, res) => {
     const _title = req.body.title;
     const _content = req.body.content;
 
-    conn.query(sql.insert, [_writer, _title, _content, date], err => {
+    conn.query(sql, [_writer, _title, _content, date], err => {
         if (err) {
             console.log(err);
             return;

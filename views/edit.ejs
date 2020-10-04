@@ -7,7 +7,7 @@
     <div class='forms'>
         <h1><%= title %></h1>
 
-        <form method='post' action='/edit/<%= docs.id %>?_method=PUT'>
+        <form method='post' action='/edit/<%= docs.id %>?_method=put'>
             <label for='writer'>작성자</label> 
             <input type='text' name='writer' class='form-control' autocomplete='off' value='<%= docs.writer %>'>
       

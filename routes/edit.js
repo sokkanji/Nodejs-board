@@ -7,7 +7,7 @@ const conn = mysql.createConnection(dbconfig);
 
 const sql = {
     select: 'SELECT * FROM border WHERE id = ?',
-    update: 'UPDATE border SET writer = ?, title = ?, content = ? WHERE id = ?',
+    update: 'UPDATE border SET writer = ?, title = ?, content = ? WHERE id = ?'
 };
 
 router.get('/edit/:id', (req, res) => {

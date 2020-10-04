@@ -7,9 +7,7 @@ const conn=mysql.createConnection(dbconfig);
 
 const session = require('express-session');
 
-const sql={
-    select: 'SELECT * FROM signup WHERE userid = ?'
-}
+const sql = 'SELECT * FROM signup WHERE userid = ?';
 
 router.get('/login', (req, res)=>{   
     res.render('login');
@@ -23,7 +21,7 @@ router.post('/login', (req, res)=>{
                     location.href='/login';
                 </script>`;
 
-    conn.query(sql.select, [_userid], (err, rows)=>{
+    conn.query(sql, [_userid], (err, rows)=>{
         if(err) {
             console.log(err); 
             return;
