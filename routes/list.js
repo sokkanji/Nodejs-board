@@ -16,7 +16,8 @@ router.get('/', (req, res) => {
             console.log(err);
             return;
         } else {
-            res.render('list', {docs: rows});
+            const _session = req.session.displayName;
+            res.render('list', {docs: rows, session: _session});
         }
     })
 })
