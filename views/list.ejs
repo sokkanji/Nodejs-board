@@ -7,6 +7,7 @@
     <div id='list'>
         <h1>Border List</h1>
 
+        <% %>
         <div class="login-info">
             <button class="btn btn-secondary btn-sm" onclick='location.href="/logout"'>Logout</button>
         </div>
@@ -27,7 +28,7 @@
             <tbody>                
                 <% for (let i = 0; i < docs.length; i++){ %>                    
                 <tr scope='row'>
-                    <td><%= docs[i].id %></td>
+                    <td><%= i+1 %></td>
                     <td><%= docs[i].writer %></td>
                     <td><a href='/<%=docs[i].id%>'><%= docs[i].title %></a></td>
                     <td><%= docs[i].regdate %></td>
