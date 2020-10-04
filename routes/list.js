@@ -30,7 +30,9 @@ router.get('/:id(\\d+)', (req, res) => {
             console.log(err);
             return;
         } else {
-            res.render('read', {docs: rows[0]});
+            const _session = req.session.displayName;
+            const _writer = rows[0].writer;
+            res.render('read', {docs: rows[0], session: _session, writer: _writer});
         }
     })
 })
