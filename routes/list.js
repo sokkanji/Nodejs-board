@@ -11,12 +11,42 @@ const sql = {
 };
 
 router.get('/', (req, res) => {
+    let page = 1;
+    
     conn.query(sql.list, (err, rows) => {
         if (err) {
             console.log(err);
             return;
         } else {
-            res.render('list', {docs: rows, session: req.session.displayName});
+            res.render('list', {
+                docs: rows, 
+                session: req.session.displayName, 
+                page:page, 
+                length:rows.length-1, 
+                page_num:5, 
+                pass:true
+            } );
+        }
+    })
+})
+
+
+router.get('/page/:page',function(req, res){
+    let page = req.params.page;
+
+    conn.query(sql.list, (err, rows) => {
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            res.render('list', {
+                docs: rows, 
+                session: req.session.displayName, 
+                page:page, 
+                length:rows.length-1, 
+                page_num:5, 
+                pass:true
+            });
         }
     })
 })

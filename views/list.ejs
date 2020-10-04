@@ -8,12 +8,12 @@
         <h1>Border List</h1>
 
         <% if(session) { %>
-            <div class="login-info">
-                <button class="btn btn-secondary btn-sm" onclick='location.href="/logout"'>Logout</button>
+            <div class='login-info'>
+                <button class='btn btn-secondary btn-sm' onclick='location.href="/logout"'>Logout</button>
             </div>
         <% } else { %>
-            <div class="login-info">
-                <button class="btn btn-secondary btn-sm" onclick='location.href="/login"'>Login</button>
+            <div class='login-info'>
+                <button class='btn btn-secondary btn-sm' onclick='location.href="/login"'>Login</button>
             </div>
         <% } %>
 
@@ -30,17 +30,32 @@
                     <th scope='col'>등록일</th>
                 </tr>
             </thead>
-            <tbody>                
-                <% for (let i = 0; i < docs.length; i++){ %>                    
-                <tr scope='row'>
-                    <td><%= i+1 %></td>
-                    <td><%= docs[i].writer %></td>
-                    <td><a href='/<%=docs[i].id%>'><%= docs[i].title %></a></td>
-                    <td><%= docs[i].regdate %></td>
-                </tr>
-                <% } %>
-            </tbody>
-        </table>
+            <tbody>          
+            <%
+            for(let i = (page * page_num) - page_num; i < (page * page_num); i++) {
+                if(i > length) {
+                    i++;
+                } else {
+                    let data = docs[i]
+            %>
+                    <tr scope='row'>
+                        <td><%= i+1 %></td>
+                        <td><%= docs[i].writer %></td>
+                        <td><a href='/<%=docs[i].id%>'><%= docs[i].title %></a></td>
+                        <td><%= docs[i].regdate %></td>
+                    </tr>
+            <% }
+            }
+            %>
+            <tr>
+                <td colspan='6'>
+                    <% for(let j = 0; j < docs.length / page_num; j++){ %>
+                    [<a href='/page/<%= j + 1 %>'><%= j + 1 %></a>]
+                    <% } %>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
         <form method='GET' action='#'>
             <select class='form-control select-box'>
