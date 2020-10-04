@@ -14,7 +14,15 @@ const conn = mysql.createConnection(dbconfig);
 const sql = 'INSERT INTO border(writer, title, content, regdate) VALUES(?, ?, ?, ?);';
 
 router.get('/write', (req, res) => {
-    res.render('write', {title: 'Write', displayName: req.session.displayName});
+    if(req.session.displayName){
+        res.render('write', {title: 'Write', displayName: req.session.displayName});
+    } else{
+        const str = `<script type='text/javascript'>
+                        alert('로그인이 필요한 페이지입니다.'); 
+                        location.href='/login';
+                    </script>`;
+        res.send(str);
+    }
 })
 
 router.post('/write', (req, res) => {

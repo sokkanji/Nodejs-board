@@ -16,10 +16,6 @@ router.get('/login', (req, res)=>{
 router.post('/login', (req, res)=>{
     const _userid = req.body.userid;
     const _userpw = req.body.userpw;
-    const str = `<script type='text/javascript'>
-                    alert('아이디 또는 비밀번호가 맞지 않습니다.'); 
-                    location.href='/login';
-                </script>`;
 
     conn.query(sql, [_userid], (err, rows)=>{
         if(err) {
@@ -32,6 +28,10 @@ router.post('/login', (req, res)=>{
                     res.redirect('/');
                 });
             } else {
+                const str = `<script type='text/javascript'>
+                                alert('아이디 또는 비밀번호가 맞지 않습니다.'); 
+                                location.href='/login';
+                            </script>`;
                 res.send(str);
             }
         };

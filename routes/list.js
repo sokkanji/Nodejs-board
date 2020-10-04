@@ -16,8 +16,7 @@ router.get('/', (req, res) => {
             console.log(err);
             return;
         } else {
-            const _session = req.session.displayName;
-            res.render('list', {docs: rows, session: _session});
+            res.render('list', {docs: rows, session: req.session.displayName});
         }
     })
 })
@@ -30,9 +29,7 @@ router.get('/:id(\\d+)', (req, res) => {
             console.log(err);
             return;
         } else {
-            const _session = req.session.displayName;
-            const _writer = rows[0].writer;
-            res.render('read', {docs: rows[0], session: _session, writer: _writer});
+            res.render('read', {docs: rows[0], session: req.session.displayName, writer: rows[0].writer});
         }
     })
 })

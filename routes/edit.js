@@ -12,6 +12,7 @@ const sql = {
 
 router.get('/edit/:id', (req, res) => {
     const paramsId = req.params.id;
+    
     conn.query(sql.select, [paramsId], (err, rows) => {
         if (err) {
             console.log(err);
