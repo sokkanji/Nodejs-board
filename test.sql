@@ -7,7 +7,7 @@ email varchar(30),
 primary key(id)
 );
 
-create table borad(
+create table board(
 id int(10) not null auto_increment,
 writer varchar(50),
 title varchar(30),
